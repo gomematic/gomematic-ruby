@@ -21,5 +21,5 @@
 #
 module Gomematic
   autoload :Version,
-    File.expand_path("gomematic/version", __DIR__)
+           File.expand_path("gomematic/version", __DIR__)
 end
