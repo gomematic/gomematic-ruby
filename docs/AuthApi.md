@@ -1,6 +1,6 @@
 # Gomematic::AuthApi
 
-All URIs are relative to *http://http:/api/v1*
+All URIs are relative to *http://try.gomematic.tech/api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 ## login_user
 
-> AuthToken login_user(auth)
+> AuthToken login_user(params)
 
 Authenticate an user by credentials
 
@@ -23,11 +23,11 @@ Authenticate an user by credentials
 require 'gomematic'
 
 api_instance = Gomematic::AuthApi.new
-auth = Gomematic::InlineObject.new # InlineObject | 
+params = Gomematic::AuthLogin.new # AuthLogin | The credentials to authenticate
 
 begin
   #Authenticate an user by credentials
-  result = api_instance.login_user(auth)
+  result = api_instance.login_user(params)
   p result
 rescue Gomematic::ApiError => e
   puts "Exception when calling AuthApi->login_user: #{e}"
@@ -39,7 +39,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **auth** | [**InlineObject**](InlineObject.md)|  | 
+ **params** | [**AuthLogin**](AuthLogin.md)| The credentials to authenticate | 
 
 ### Return type
 

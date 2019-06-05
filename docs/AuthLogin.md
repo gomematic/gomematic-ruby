@@ -1,4 +1,4 @@
-# Gomematic::InlineObject
+# Gomematic::AuthLogin
 
 ## Properties
 
@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 ```ruby
 require 'Gomematic'
 
-instance = Gomematic::InlineObject.new(username: null,
+instance = Gomematic::AuthLogin.new(username: null,
                                  password: null)
 ```
 

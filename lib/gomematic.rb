@@ -17,15 +17,18 @@ require 'gomematic/version'
 require 'gomematic/configuration'
 
 # Models
+require 'gomematic/models/auth_login'
 require 'gomematic/models/auth_token'
 require 'gomematic/models/auth_verify'
-require 'gomematic/models/inline_object'
+require 'gomematic/models/general_error'
 require 'gomematic/models/profile'
 require 'gomematic/models/team'
 require 'gomematic/models/team_user'
 require 'gomematic/models/team_user_params'
 require 'gomematic/models/user'
 require 'gomematic/models/user_team_params'
+require 'gomematic/models/validation_error'
+require 'gomematic/models/validation_error_errors'
 
 # APIs
 require 'gomematic/api/auth_api'

@@ -54,11 +54,11 @@ Please follow the [installation](#installation) instructions and then run the fo
 require 'gomematic'
 
 api = Gomematic::AuthApi.new
-auth = Gomematic::InlineObject.new # InlineObject | 
+params = Gomematic::AuthLogin.new # AuthLogin | The credentials to authenticate
 
 begin
   # Authenticate an user by credentials
-  result =  api.login_user(auth)
+  result =  api.login_user(params)
   p result
 rescue Gomematic::ApiError => e
   puts "Exception when calling AuthApi->login_user: #{e}"
@@ -99,20 +99,33 @@ Class | Method | HTTP request | Description
 
 ## Documentation for models
 
+ - [Gomematic::AuthLogin](docs/AuthLogin.md)
  - [Gomematic::AuthToken](docs/AuthToken.md)
  - [Gomematic::AuthVerify](docs/AuthVerify.md)
- - [Gomematic::InlineObject](docs/InlineObject.md)
+ - [Gomematic::GeneralError](docs/GeneralError.md)
  - [Gomematic::Profile](docs/Profile.md)
  - [Gomematic::Team](docs/Team.md)
  - [Gomematic::TeamUser](docs/TeamUser.md)
  - [Gomematic::TeamUserParams](docs/TeamUserParams.md)
  - [Gomematic::User](docs/User.md)
  - [Gomematic::UserTeamParams](docs/UserTeamParams.md)
+ - [Gomematic::ValidationError](docs/ValidationError.md)
+ - [Gomematic::ValidationErrorErrors](docs/ValidationErrorErrors.md)
 
 
 ## Documentation for authorization
 
- All endpoints do not require authorization.
+
+### BasicAuth
+
+- **Type**: HTTP basic authentication
+
+### HeaderAuth
+
+
+- **Type**: API key
+- **API key parameter name**: X-API-Key
+- **Location**: HTTP header
 
 
 ## Security

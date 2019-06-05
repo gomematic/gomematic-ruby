@@ -129,7 +129,7 @@ module Gomematic
 
     def initialize
       @scheme = 'http'
-      @host = ''
+      @host = 'try.gomematic.tech'
       @base_path = '/api/v1'
       @api_key = {}
       @api_key_prefix = {}
@@ -196,6 +196,20 @@ module Gomematic
     # Returns Auth Settings hash for api client.
     def auth_settings
       {
+        'BasicAuth' =>
+          {
+            type: 'basic',
+            in: 'header',
+            key: 'Authorization',
+            value: basic_auth_token
+          },
+        'HeaderAuth' =>
+          {
+            type: 'api_key',
+            in: 'header',
+            key: 'X-API-Key',
+            value: api_key_with_prefix('X-API-Key')
+          },
       }
     end
 
@@ -203,7 +217,11 @@ module Gomematic
     def server_settings
       [
         {
-          url: "///api/v1",
+          url: "http://try.gomematic.tech/api/v1",
+          description: "No descriptoin provided",
+        },
+        {
+          url: "https://try.gomematic.tech/api/v1",
           description: "No descriptoin provided",
         }
       ]
