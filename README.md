@@ -53,11 +53,11 @@ Please follow the [installation](#installation) instructions and then run the fo
 require 'gomematic'
 
 api = Gomematic::AuthApi.new
-params = Gomematic::AuthLogin.new # AuthLogin | The credentials to authenticate
+auth_login = Gomematic::AuthLogin.new # AuthLogin | The credentials to authenticate
 
 begin
   # Authenticate an user by credentials
-  result =  api.login_user(params)
+  result =  api.login_user(auth_login)
   p result
 rescue Gomematic::ApiError => e
   puts "Exception when calling AuthApi->login_user: #{e}"
@@ -79,7 +79,7 @@ Class | Method | HTTP request | Description
 *Gomematic::TeamApi* | [**append_team_to_user**](docs/TeamApi.md#append_team_to_user) | **POST** /teams/{team_id}/users | Assign a user to team
 *Gomematic::TeamApi* | [**create_team**](docs/TeamApi.md#create_team) | **POST** /teams | Create a new team
 *Gomematic::TeamApi* | [**delete_team**](docs/TeamApi.md#delete_team) | **DELETE** /teams/{team_id} | Delete a specific team
-*Gomematic::TeamApi* | [**delte_team_from_user**](docs/TeamApi.md#delte_team_from_user) | **DELETE** /teams/{team_id}/users | Remove a user from team
+*Gomematic::TeamApi* | [**delete_team_from_user**](docs/TeamApi.md#delete_team_from_user) | **DELETE** /teams/{team_id}/users | Remove a user from team
 *Gomematic::TeamApi* | [**list_team_users**](docs/TeamApi.md#list_team_users) | **GET** /teams/{team_id}/users | Fetch all users assigned to team
 *Gomematic::TeamApi* | [**list_teams**](docs/TeamApi.md#list_teams) | **GET** /teams | Fetch all available teams
 *Gomematic::TeamApi* | [**permit_team_user**](docs/TeamApi.md#permit_team_user) | **PUT** /teams/{team_id}/users | Update user perms for team
