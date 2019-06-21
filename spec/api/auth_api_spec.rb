@@ -55,7 +55,6 @@ describe 'AuthApi' do
 
   # unit tests for verify_auth
   # Verify validity for an authentication token
-  # @param token A token that have to be checked
   # @param [Hash] opts the optional parameters
   # @return [AuthVerify]
   describe 'verify_auth test' do

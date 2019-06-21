@@ -66,10 +66,6 @@ module Gomematic
         invalid_properties.push('invalid value for "username", username cannot be nil.')
       end
 
-      if @created_at.nil?
-        invalid_properties.push('invalid value for "created_at", created_at cannot be nil.')
-      end
-
       invalid_properties
     end
 
@@ -77,7 +73,6 @@ module Gomematic
     # @return true if the model is valid
     def valid?
       return false if @username.nil?
-      return false if @created_at.nil?
       true
     end
 

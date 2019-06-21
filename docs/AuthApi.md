@@ -6,7 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**login_user**](AuthApi.md#login_user) | **POST** /auth/login | Authenticate an user by credentials
 [**refresh_auth**](AuthApi.md#refresh_auth) | **GET** /auth/refresh | Refresh an auth token before it expires
-[**verify_auth**](AuthApi.md#verify_auth) | **GET** /auth/verify/{token} | Verify validity for an authentication token
+[**verify_auth**](AuthApi.md#verify_auth) | **GET** /auth/verify | Verify validity for an authentication token
 
 
 
@@ -21,6 +21,17 @@ Authenticate an user by credentials
 ```ruby
 # load the gem
 require 'gomematic'
+# setup authorization
+Gomematic.configure do |config|
+  # Configure HTTP basic authorization: Basic
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+
+  # Configure API key authorization: Header
+  config.api_key['X-API-Key'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['X-API-Key'] = 'Bearer'
+end
 
 api_instance = Gomematic::AuthApi.new
 auth_login = Gomematic::AuthLogin.new # AuthLogin | The credentials to authenticate
@@ -47,7 +58,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Basic](../README.md#Basic), [Header](../README.md#Header)
 
 ### HTTP request headers
 
@@ -66,6 +77,17 @@ Refresh an auth token before it expires
 ```ruby
 # load the gem
 require 'gomematic'
+# setup authorization
+Gomematic.configure do |config|
+  # Configure HTTP basic authorization: Basic
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+
+  # Configure API key authorization: Header
+  config.api_key['X-API-Key'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['X-API-Key'] = 'Bearer'
+end
 
 api_instance = Gomematic::AuthApi.new
 
@@ -88,7 +110,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-No authorization required
+[Basic](../README.md#Basic), [Header](../README.md#Header)
 
 ### HTTP request headers
 
@@ -98,7 +120,7 @@ No authorization required
 
 ## verify_auth
 
-> AuthVerify verify_auth(token)
+> AuthVerify verify_auth
 
 Verify validity for an authentication token
 
@@ -107,13 +129,23 @@ Verify validity for an authentication token
 ```ruby
 # load the gem
 require 'gomematic'
+# setup authorization
+Gomematic.configure do |config|
+  # Configure HTTP basic authorization: Basic
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+
+  # Configure API key authorization: Header
+  config.api_key['X-API-Key'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['X-API-Key'] = 'Bearer'
+end
 
 api_instance = Gomematic::AuthApi.new
-token = 'token_example' # String | A token that have to be checked
 
 begin
   #Verify validity for an authentication token
-  result = api_instance.verify_auth(token)
+  result = api_instance.verify_auth
   p result
 rescue Gomematic::ApiError => e
   puts "Exception when calling AuthApi->verify_auth: #{e}"
@@ -122,10 +154,7 @@ end
 
 ### Parameters
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **token** | **String**| A token that have to be checked | 
+This endpoint does not need any parameter.
 
 ### Return type
 
@@ -133,7 +162,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Basic](../README.md#Basic), [Header](../README.md#Header)
 
 ### HTTP request headers
 

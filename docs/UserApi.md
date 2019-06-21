@@ -27,6 +27,17 @@ Assign a team to user
 ```ruby
 # load the gem
 require 'gomematic'
+# setup authorization
+Gomematic.configure do |config|
+  # Configure HTTP basic authorization: Basic
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+
+  # Configure API key authorization: Header
+  config.api_key['X-API-Key'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['X-API-Key'] = 'Bearer'
+end
 
 api_instance = Gomematic::UserApi.new
 user_id = 'user_id_example' # String | A user UUID or slug
@@ -55,7 +66,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Basic](../README.md#Basic), [Header](../README.md#Header)
 
 ### HTTP request headers
 
@@ -74,6 +85,17 @@ Create a new user
 ```ruby
 # load the gem
 require 'gomematic'
+# setup authorization
+Gomematic.configure do |config|
+  # Configure HTTP basic authorization: Basic
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+
+  # Configure API key authorization: Header
+  config.api_key['X-API-Key'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['X-API-Key'] = 'Bearer'
+end
 
 api_instance = Gomematic::UserApi.new
 user = Gomematic::User.new # User | The user data to create
@@ -100,7 +122,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Basic](../README.md#Basic), [Header](../README.md#Header)
 
 ### HTTP request headers
 
@@ -119,6 +141,17 @@ Delete a specific user
 ```ruby
 # load the gem
 require 'gomematic'
+# setup authorization
+Gomematic.configure do |config|
+  # Configure HTTP basic authorization: Basic
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+
+  # Configure API key authorization: Header
+  config.api_key['X-API-Key'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['X-API-Key'] = 'Bearer'
+end
 
 api_instance = Gomematic::UserApi.new
 user_id = 'user_id_example' # String | A user UUID or slug
@@ -145,7 +178,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Basic](../README.md#Basic), [Header](../README.md#Header)
 
 ### HTTP request headers
 
@@ -164,6 +197,17 @@ Remove a team from user
 ```ruby
 # load the gem
 require 'gomematic'
+# setup authorization
+Gomematic.configure do |config|
+  # Configure HTTP basic authorization: Basic
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+
+  # Configure API key authorization: Header
+  config.api_key['X-API-Key'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['X-API-Key'] = 'Bearer'
+end
 
 api_instance = Gomematic::UserApi.new
 user_id = 'user_id_example' # String | A user UUID or slug
@@ -192,7 +236,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Basic](../README.md#Basic), [Header](../README.md#Header)
 
 ### HTTP request headers
 
@@ -211,6 +255,17 @@ Fetch all teams assigned to user
 ```ruby
 # load the gem
 require 'gomematic'
+# setup authorization
+Gomematic.configure do |config|
+  # Configure HTTP basic authorization: Basic
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+
+  # Configure API key authorization: Header
+  config.api_key['X-API-Key'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['X-API-Key'] = 'Bearer'
+end
 
 api_instance = Gomematic::UserApi.new
 user_id = 'user_id_example' # String | A user UUID or slug
@@ -237,7 +292,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Basic](../README.md#Basic), [Header](../README.md#Header)
 
 ### HTTP request headers
 
@@ -256,6 +311,17 @@ Fetch all available users
 ```ruby
 # load the gem
 require 'gomematic'
+# setup authorization
+Gomematic.configure do |config|
+  # Configure HTTP basic authorization: Basic
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+
+  # Configure API key authorization: Header
+  config.api_key['X-API-Key'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['X-API-Key'] = 'Bearer'
+end
 
 api_instance = Gomematic::UserApi.new
 
@@ -278,7 +344,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-No authorization required
+[Basic](../README.md#Basic), [Header](../README.md#Header)
 
 ### HTTP request headers
 
@@ -297,6 +363,17 @@ Update team perms for user
 ```ruby
 # load the gem
 require 'gomematic'
+# setup authorization
+Gomematic.configure do |config|
+  # Configure HTTP basic authorization: Basic
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+
+  # Configure API key authorization: Header
+  config.api_key['X-API-Key'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['X-API-Key'] = 'Bearer'
+end
 
 api_instance = Gomematic::UserApi.new
 user_id = 'user_id_example' # String | A user UUID or slug
@@ -325,7 +402,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Basic](../README.md#Basic), [Header](../README.md#Header)
 
 ### HTTP request headers
 
@@ -344,6 +421,17 @@ Fetch a specific user
 ```ruby
 # load the gem
 require 'gomematic'
+# setup authorization
+Gomematic.configure do |config|
+  # Configure HTTP basic authorization: Basic
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+
+  # Configure API key authorization: Header
+  config.api_key['X-API-Key'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['X-API-Key'] = 'Bearer'
+end
 
 api_instance = Gomematic::UserApi.new
 user_id = 'user_id_example' # String | A user UUID or slug
@@ -370,7 +458,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Basic](../README.md#Basic), [Header](../README.md#Header)
 
 ### HTTP request headers
 
@@ -389,6 +477,17 @@ Update a specific user
 ```ruby
 # load the gem
 require 'gomematic'
+# setup authorization
+Gomematic.configure do |config|
+  # Configure HTTP basic authorization: Basic
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+
+  # Configure API key authorization: Header
+  config.api_key['X-API-Key'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['X-API-Key'] = 'Bearer'
+end
 
 api_instance = Gomematic::UserApi.new
 user_id = 'user_id_example' # String | A user UUID or slug
@@ -417,7 +516,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Basic](../README.md#Basic), [Header](../README.md#Header)
 
 ### HTTP request headers
 

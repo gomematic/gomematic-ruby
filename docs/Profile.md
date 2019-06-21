@@ -6,13 +6,14 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **String** |  | [optional] 
 **slug** | **String** |  | [optional] 
-**username** | **String** |  | 
+**username** | **String** |  | [optional] 
 **password** | **String** |  | [optional] 
-**email** | **String** |  | 
+**email** | **String** |  | [optional] 
 **admin** | **Boolean** |  | [optional] 
 **active** | **Boolean** |  | [optional] 
 **created_at** | **DateTime** |  | [optional] 
 **updated_at** | **DateTime** |  | [optional] 
+**teams** | [**Array&lt;TeamUser&gt;**](TeamUser.md) |  | [optional] 
 
 ## Code Sample
 
@@ -27,7 +28,8 @@ instance = Gomematic::Profile.new(id: null,
                                  admin: null,
                                  active: null,
                                  created_at: null,
-                                 updated_at: null)
+                                 updated_at: null,
+                                 teams: null)
 ```
 
 

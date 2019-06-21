@@ -24,6 +24,8 @@ module Gomematic
 
     attr_accessor :updated_at
 
+    attr_accessor :users
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -31,7 +33,8 @@ module Gomematic
         :'slug' => :'slug',
         :'name' => :'name',
         :'created_at' => :'created_at',
-        :'updated_at' => :'updated_at'
+        :'updated_at' => :'updated_at',
+        :'users' => :'users'
       }
     end
 
@@ -42,7 +45,8 @@ module Gomematic
         :'slug' => :'String',
         :'name' => :'String',
         :'created_at' => :'DateTime',
-        :'updated_at' => :'DateTime'
+        :'updated_at' => :'DateTime',
+        :'users' => :'Array<TeamUser>'
       }
     end
 
@@ -80,23 +84,24 @@ module Gomematic
       if attributes.key?(:'updated_at')
         self.updated_at = attributes[:'updated_at']
       end
+
+      if attributes.key?(:'users')
+        if (value = attributes[:'users']).is_a?(Array)
+          self.users = value
+        end
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
-      if @name.nil?
-        invalid_properties.push('invalid value for "name", name cannot be nil.')
-      end
-
       invalid_properties
     end
 
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @name.nil?
       true
     end
 
@@ -109,7 +114,8 @@ module Gomematic
           slug == o.slug &&
           name == o.name &&
           created_at == o.created_at &&
-          updated_at == o.updated_at
+          updated_at == o.updated_at &&
+          users == o.users
     end
 
     # @see the `==` method
@@ -121,7 +127,7 @@ module Gomematic
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, slug, name, created_at, updated_at].hash
+      [id, slug, name, created_at, updated_at, users].hash
     end
 
     # Builds the object from hash

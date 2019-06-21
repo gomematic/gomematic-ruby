@@ -66,10 +66,6 @@ module Gomematic
         invalid_properties.push('invalid value for "token", token cannot be nil.')
       end
 
-      if @expires_at.nil?
-        invalid_properties.push('invalid value for "expires_at", expires_at cannot be nil.')
-      end
-
       invalid_properties
     end
 
@@ -77,7 +73,6 @@ module Gomematic
     # @return true if the model is valid
     def valid?
       return false if @token.nil?
-      return false if @expires_at.nil?
       true
     end
 

@@ -63,7 +63,7 @@ module Gomematic
       return_type = opts[:return_type] || 'AuthToken' 
 
       # auth_names
-      auth_names = opts[:auth_names] || []
+      auth_names = opts[:auth_names] || ['Basic', 'Header']
 
       new_options = opts.merge(
         :header_params => header_params,
@@ -117,7 +117,7 @@ module Gomematic
       return_type = opts[:return_type] || 'AuthToken' 
 
       # auth_names
-      auth_names = opts[:auth_names] || []
+      auth_names = opts[:auth_names] || ['Basic', 'Header']
 
       new_options = opts.merge(
         :header_params => header_params,
@@ -136,28 +136,22 @@ module Gomematic
     end
 
     # Verify validity for an authentication token
-    # @param token [String] A token that have to be checked
     # @param [Hash] opts the optional parameters
     # @return [AuthVerify]
-    def verify_auth(token, opts = {})
-      data, _status_code, _headers = verify_auth_with_http_info(token, opts)
+    def verify_auth(opts = {})
+      data, _status_code, _headers = verify_auth_with_http_info(opts)
       data
     end
 
     # Verify validity for an authentication token
-    # @param token [String] A token that have to be checked
     # @param [Hash] opts the optional parameters
     # @return [Array<(AuthVerify, Integer, Hash)>] AuthVerify data, response status code and response headers
-    def verify_auth_with_http_info(token, opts = {})
+    def verify_auth_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: AuthApi.verify_auth ...'
       end
-      # verify the required parameter 'token' is set
-      if @api_client.config.client_side_validation && token.nil?
-        fail ArgumentError, "Missing the required parameter 'token' when calling AuthApi.verify_auth"
-      end
       # resource path
-      local_var_path = '/auth/verify/{token}'.sub('{' + 'token' + '}', token.to_s)
+      local_var_path = '/auth/verify'
 
       # query parameters
       query_params = opts[:query_params] || {}
@@ -177,7 +171,7 @@ module Gomematic
       return_type = opts[:return_type] || 'AuthVerify' 
 
       # auth_names
-      auth_names = opts[:auth_names] || []
+      auth_names = opts[:auth_names] || ['Basic', 'Header']
 
       new_options = opts.merge(
         :header_params => header_params,

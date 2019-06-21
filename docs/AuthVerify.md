@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **username** | **String** |  | 
-**created_at** | **DateTime** |  | 
+**created_at** | **DateTime** |  | [optional] 
 
 ## Code Sample
 

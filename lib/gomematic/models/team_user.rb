@@ -16,9 +16,17 @@ module Gomematic
   class TeamUser
     attr_accessor :team_id
 
+    attr_accessor :team
+
     attr_accessor :user_id
 
+    attr_accessor :user
+
     attr_accessor :perm
+
+    attr_accessor :created_at
+
+    attr_accessor :updated_at
 
     class EnumAttributeValidator
       attr_reader :datatype
@@ -46,8 +54,12 @@ module Gomematic
     def self.attribute_map
       {
         :'team_id' => :'team_id',
+        :'team' => :'team',
         :'user_id' => :'user_id',
-        :'perm' => :'perm'
+        :'user' => :'user',
+        :'perm' => :'perm',
+        :'created_at' => :'created_at',
+        :'updated_at' => :'updated_at'
       }
     end
 
@@ -55,8 +67,12 @@ module Gomematic
     def self.openapi_types
       {
         :'team_id' => :'String',
+        :'team' => :'Team',
         :'user_id' => :'String',
-        :'perm' => :'String'
+        :'user' => :'User',
+        :'perm' => :'String',
+        :'created_at' => :'DateTime',
+        :'updated_at' => :'DateTime'
       }
     end
 
@@ -79,12 +95,28 @@ module Gomematic
         self.team_id = attributes[:'team_id']
       end
 
+      if attributes.key?(:'team')
+        self.team = attributes[:'team']
+      end
+
       if attributes.key?(:'user_id')
         self.user_id = attributes[:'user_id']
       end
 
+      if attributes.key?(:'user')
+        self.user = attributes[:'user']
+      end
+
       if attributes.key?(:'perm')
         self.perm = attributes[:'perm']
+      end
+
+      if attributes.key?(:'created_at')
+        self.created_at = attributes[:'created_at']
+      end
+
+      if attributes.key?(:'updated_at')
+        self.updated_at = attributes[:'updated_at']
       end
     end
 
@@ -134,8 +166,12 @@ module Gomematic
       return true if self.equal?(o)
       self.class == o.class &&
           team_id == o.team_id &&
+          team == o.team &&
           user_id == o.user_id &&
-          perm == o.perm
+          user == o.user &&
+          perm == o.perm &&
+          created_at == o.created_at &&
+          updated_at == o.updated_at
     end
 
     # @see the `==` method
@@ -147,7 +183,7 @@ module Gomematic
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [team_id, user_id, perm].hash
+      [team_id, team, user_id, user, perm, created_at, updated_at].hash
     end
 
     # Builds the object from hash

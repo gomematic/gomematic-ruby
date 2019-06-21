@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **token** | **String** |  | 
-**expires_at** | **DateTime** |  | 
+**expires_at** | **DateTime** |  | [optional] 
 
 ## Code Sample
 

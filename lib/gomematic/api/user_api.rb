@@ -69,7 +69,7 @@ module Gomematic
       return_type = opts[:return_type] || 'GeneralError' 
 
       # auth_names
-      auth_names = opts[:auth_names] || []
+      auth_names = opts[:auth_names] || ['Basic', 'Header']
 
       new_options = opts.merge(
         :header_params => header_params,
@@ -131,7 +131,7 @@ module Gomematic
       return_type = opts[:return_type] || 'User' 
 
       # auth_names
-      auth_names = opts[:auth_names] || []
+      auth_names = opts[:auth_names] || ['Basic', 'Header']
 
       new_options = opts.merge(
         :header_params => header_params,
@@ -191,7 +191,7 @@ module Gomematic
       return_type = opts[:return_type] || 'GeneralError' 
 
       # auth_names
-      auth_names = opts[:auth_names] || []
+      auth_names = opts[:auth_names] || ['Basic', 'Header']
 
       new_options = opts.merge(
         :header_params => header_params,
@@ -259,7 +259,7 @@ module Gomematic
       return_type = opts[:return_type] || 'GeneralError' 
 
       # auth_names
-      auth_names = opts[:auth_names] || []
+      auth_names = opts[:auth_names] || ['Basic', 'Header']
 
       new_options = opts.merge(
         :header_params => header_params,
@@ -319,7 +319,7 @@ module Gomematic
       return_type = opts[:return_type] || 'Array<TeamUser>' 
 
       # auth_names
-      auth_names = opts[:auth_names] || []
+      auth_names = opts[:auth_names] || ['Basic', 'Header']
 
       new_options = opts.merge(
         :header_params => header_params,
@@ -373,7 +373,7 @@ module Gomematic
       return_type = opts[:return_type] || 'Array<User>' 
 
       # auth_names
-      auth_names = opts[:auth_names] || []
+      auth_names = opts[:auth_names] || ['Basic', 'Header']
 
       new_options = opts.merge(
         :header_params => header_params,
@@ -441,7 +441,7 @@ module Gomematic
       return_type = opts[:return_type] || 'GeneralError' 
 
       # auth_names
-      auth_names = opts[:auth_names] || []
+      auth_names = opts[:auth_names] || ['Basic', 'Header']
 
       new_options = opts.merge(
         :header_params => header_params,
@@ -501,7 +501,7 @@ module Gomematic
       return_type = opts[:return_type] || 'User' 
 
       # auth_names
-      auth_names = opts[:auth_names] || []
+      auth_names = opts[:auth_names] || ['Basic', 'Header']
 
       new_options = opts.merge(
         :header_params => header_params,
@@ -569,7 +569,7 @@ module Gomematic
       return_type = opts[:return_type] || 'User' 
 
       # auth_names
-      auth_names = opts[:auth_names] || []
+      auth_names = opts[:auth_names] || ['Basic', 'Header']
 
       new_options = opts.merge(
         :header_params => header_params,

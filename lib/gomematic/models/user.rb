@@ -32,6 +32,8 @@ module Gomematic
 
     attr_accessor :updated_at
 
+    attr_accessor :teams
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -43,7 +45,8 @@ module Gomematic
         :'admin' => :'admin',
         :'active' => :'active',
         :'created_at' => :'created_at',
-        :'updated_at' => :'updated_at'
+        :'updated_at' => :'updated_at',
+        :'teams' => :'teams'
       }
     end
 
@@ -58,7 +61,8 @@ module Gomematic
         :'admin' => :'Boolean',
         :'active' => :'Boolean',
         :'created_at' => :'DateTime',
-        :'updated_at' => :'DateTime'
+        :'updated_at' => :'DateTime',
+        :'teams' => :'Array<TeamUser>'
       }
     end
 
@@ -112,28 +116,24 @@ module Gomematic
       if attributes.key?(:'updated_at')
         self.updated_at = attributes[:'updated_at']
       end
+
+      if attributes.key?(:'teams')
+        if (value = attributes[:'teams']).is_a?(Array)
+          self.teams = value
+        end
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
-      if @username.nil?
-        invalid_properties.push('invalid value for "username", username cannot be nil.')
-      end
-
-      if @email.nil?
-        invalid_properties.push('invalid value for "email", email cannot be nil.')
-      end
-
       invalid_properties
     end
 
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @username.nil?
-      return false if @email.nil?
       true
     end
 
@@ -150,7 +150,8 @@ module Gomematic
           admin == o.admin &&
           active == o.active &&
           created_at == o.created_at &&
-          updated_at == o.updated_at
+          updated_at == o.updated_at &&
+          teams == o.teams
     end
 
     # @see the `==` method
@@ -162,7 +163,7 @@ module Gomematic
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, slug, username, password, email, admin, active, created_at, updated_at].hash
+      [id, slug, username, password, email, admin, active, created_at, updated_at, teams].hash
     end
 
     # Builds the object from hash

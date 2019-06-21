@@ -196,14 +196,14 @@ module Gomematic
     # Returns Auth Settings hash for api client.
     def auth_settings
       {
-        'BasicAuth' =>
+        'Basic' =>
           {
             type: 'basic',
             in: 'header',
             key: 'Authorization',
             value: basic_auth_token
           },
-        'HeaderAuth' =>
+        'Header' =>
           {
             type: 'api_key',
             in: 'header',

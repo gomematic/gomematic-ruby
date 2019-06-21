@@ -52,6 +52,18 @@ Please follow the [installation](#installation) instructions and then run the fo
 ```ruby
 require 'gomematic'
 
+
+Gomematic.configure do |config|
+  # Configure HTTP basic authorization: Basic
+  config.username = 'YOUR_USERNAME'
+  config.password = 'YOUR_PASSWORD'
+
+  # Configure API key authorization: Header
+  config.api_key['X-API-Key'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['X-API-Key'] = 'Bearer'
+end
+
 api = Gomematic::AuthApi.new
 auth_login = Gomematic::AuthLogin.new # AuthLogin | The credentials to authenticate
 
@@ -72,10 +84,10 @@ Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *Gomematic::AuthApi* | [**login_user**](docs/AuthApi.md#login_user) | **POST** /auth/login | Authenticate an user by credentials
 *Gomematic::AuthApi* | [**refresh_auth**](docs/AuthApi.md#refresh_auth) | **GET** /auth/refresh | Refresh an auth token before it expires
-*Gomematic::AuthApi* | [**verify_auth**](docs/AuthApi.md#verify_auth) | **GET** /auth/verify/{token} | Verify validity for an authentication token
-*Gomematic::ProfileApi* | [**show_profile**](docs/ProfileApi.md#show_profile) | **GET** /profile/self | Retrieve an unlimited auth token
+*Gomematic::AuthApi* | [**verify_auth**](docs/AuthApi.md#verify_auth) | **GET** /auth/verify | Verify validity for an authentication token
+*Gomematic::ProfileApi* | [**show_profile**](docs/ProfileApi.md#show_profile) | **GET** /profile/self | Fetch profile details of the personal account
 *Gomematic::ProfileApi* | [**token_profile**](docs/ProfileApi.md#token_profile) | **GET** /profile/token | Retrieve an unlimited auth token
-*Gomematic::ProfileApi* | [**update_profile**](docs/ProfileApi.md#update_profile) | **PUT** /profile/self | Retrieve an unlimited auth token
+*Gomematic::ProfileApi* | [**update_profile**](docs/ProfileApi.md#update_profile) | **PUT** /profile/self | Update your own profile information
 *Gomematic::TeamApi* | [**append_team_to_user**](docs/TeamApi.md#append_team_to_user) | **POST** /teams/{team_id}/users | Assign a user to team
 *Gomematic::TeamApi* | [**create_team**](docs/TeamApi.md#create_team) | **POST** /teams | Create a new team
 *Gomematic::TeamApi* | [**delete_team**](docs/TeamApi.md#delete_team) | **DELETE** /teams/{team_id} | Delete a specific team
@@ -115,11 +127,11 @@ Class | Method | HTTP request | Description
 ## Documentation for authorization
 
 
-### BasicAuth
+### Basic
 
 - **Type**: HTTP basic authentication
 
-### HeaderAuth
+### Header
 
 
 - **Type**: API key

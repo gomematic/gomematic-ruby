@@ -33,7 +33,7 @@ describe 'ProfileApi' do
   end
 
   # unit tests for show_profile
-  # Retrieve an unlimited auth token
+  # Fetch profile details of the personal account
   # @param [Hash] opts the optional parameters
   # @return [Profile]
   describe 'show_profile test' do
@@ -53,7 +53,7 @@ describe 'ProfileApi' do
   end
 
   # unit tests for update_profile
-  # Retrieve an unlimited auth token
+  # Update your own profile information
   # @param profile The profile data to update
   # @param [Hash] opts the optional parameters
   # @return [Profile]

@@ -4,9 +4,9 @@ All URIs are relative to *http://try.gomematic.tech/api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**show_profile**](ProfileApi.md#show_profile) | **GET** /profile/self | Retrieve an unlimited auth token
+[**show_profile**](ProfileApi.md#show_profile) | **GET** /profile/self | Fetch profile details of the personal account
 [**token_profile**](ProfileApi.md#token_profile) | **GET** /profile/token | Retrieve an unlimited auth token
-[**update_profile**](ProfileApi.md#update_profile) | **PUT** /profile/self | Retrieve an unlimited auth token
+[**update_profile**](ProfileApi.md#update_profile) | **PUT** /profile/self | Update your own profile information
 
 
 
@@ -14,18 +14,29 @@ Method | HTTP request | Description
 
 > Profile show_profile
 
-Retrieve an unlimited auth token
+Fetch profile details of the personal account
 
 ### Example
 
 ```ruby
 # load the gem
 require 'gomematic'
+# setup authorization
+Gomematic.configure do |config|
+  # Configure HTTP basic authorization: Basic
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+
+  # Configure API key authorization: Header
+  config.api_key['X-API-Key'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['X-API-Key'] = 'Bearer'
+end
 
 api_instance = Gomematic::ProfileApi.new
 
 begin
-  #Retrieve an unlimited auth token
+  #Fetch profile details of the personal account
   result = api_instance.show_profile
   p result
 rescue Gomematic::ApiError => e
@@ -43,7 +54,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-No authorization required
+[Basic](../README.md#Basic), [Header](../README.md#Header)
 
 ### HTTP request headers
 
@@ -62,6 +73,17 @@ Retrieve an unlimited auth token
 ```ruby
 # load the gem
 require 'gomematic'
+# setup authorization
+Gomematic.configure do |config|
+  # Configure HTTP basic authorization: Basic
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+
+  # Configure API key authorization: Header
+  config.api_key['X-API-Key'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['X-API-Key'] = 'Bearer'
+end
 
 api_instance = Gomematic::ProfileApi.new
 
@@ -84,7 +106,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-No authorization required
+[Basic](../README.md#Basic), [Header](../README.md#Header)
 
 ### HTTP request headers
 
@@ -96,19 +118,30 @@ No authorization required
 
 > Profile update_profile(profile)
 
-Retrieve an unlimited auth token
+Update your own profile information
 
 ### Example
 
 ```ruby
 # load the gem
 require 'gomematic'
+# setup authorization
+Gomematic.configure do |config|
+  # Configure HTTP basic authorization: Basic
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+
+  # Configure API key authorization: Header
+  config.api_key['X-API-Key'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['X-API-Key'] = 'Bearer'
+end
 
 api_instance = Gomematic::ProfileApi.new
 profile = Gomematic::Profile.new # Profile | The profile data to update
 
 begin
-  #Retrieve an unlimited auth token
+  #Update your own profile information
   result = api_instance.update_profile(profile)
   p result
 rescue Gomematic::ApiError => e
@@ -129,7 +162,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Basic](../README.md#Basic), [Header](../README.md#Header)
 
 ### HTTP request headers
 

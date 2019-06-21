@@ -19,7 +19,7 @@ module Gomematic
     def initialize(api_client = ApiClient.default)
       @api_client = api_client
     end
-    # Retrieve an unlimited auth token
+    # Fetch profile details of the personal account
     # @param [Hash] opts the optional parameters
     # @return [Profile]
     def show_profile(opts = {})
@@ -27,7 +27,7 @@ module Gomematic
       data
     end
 
-    # Retrieve an unlimited auth token
+    # Fetch profile details of the personal account
     # @param [Hash] opts the optional parameters
     # @return [Array<(Profile, Integer, Hash)>] Profile data, response status code and response headers
     def show_profile_with_http_info(opts = {})
@@ -55,7 +55,7 @@ module Gomematic
       return_type = opts[:return_type] || 'Profile' 
 
       # auth_names
-      auth_names = opts[:auth_names] || []
+      auth_names = opts[:auth_names] || ['Basic', 'Header']
 
       new_options = opts.merge(
         :header_params => header_params,
@@ -109,7 +109,7 @@ module Gomematic
       return_type = opts[:return_type] || 'AuthToken' 
 
       # auth_names
-      auth_names = opts[:auth_names] || []
+      auth_names = opts[:auth_names] || ['Basic', 'Header']
 
       new_options = opts.merge(
         :header_params => header_params,
@@ -127,7 +127,7 @@ module Gomematic
       return data, status_code, headers
     end
 
-    # Retrieve an unlimited auth token
+    # Update your own profile information
     # @param profile [Profile] The profile data to update
     # @param [Hash] opts the optional parameters
     # @return [Profile]
@@ -136,7 +136,7 @@ module Gomematic
       data
     end
 
-    # Retrieve an unlimited auth token
+    # Update your own profile information
     # @param profile [Profile] The profile data to update
     # @param [Hash] opts the optional parameters
     # @return [Array<(Profile, Integer, Hash)>] Profile data, response status code and response headers
@@ -171,7 +171,7 @@ module Gomematic
       return_type = opts[:return_type] || 'Profile' 
 
       # auth_names
-      auth_names = opts[:auth_names] || []
+      auth_names = opts[:auth_names] || ['Basic', 'Header']
 
       new_options = opts.merge(
         :header_params => header_params,
